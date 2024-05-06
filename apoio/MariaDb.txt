@@ -1,0 +1,17 @@
+
+
+https://mariadb.com/kb/en/systemd/
+
+$ systemctl enable mariadb.service
+$ systemctl status mariadb.service
+$ systemctl start mariadb@node1.service
+
+-- Para atualizar após alterar as configurações.
+$ systemctl daemon-reload
+
+-- Alterar as permissões de acesso localhost.
+GRANT ALL PRIVILEGES on *.* to 'root'@'localhost' IDENTIFIED BY '';
+FLUSH PRIVILEGES;
+
+-- acessar o banco de dados.
+$ mariadb

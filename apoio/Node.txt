@@ -1,0 +1,18 @@
+
+-- ENTRAR COMO ROOT.
+$ su -
+
+-- instalação do node js (v12.22.12)
+$ apt-get install nodejs
+-- instalação do NPM (v 7.5.2)
+$ apt install npm
+
+
+-- PARA REMOVER O NODE E NPM
+$ apt remove nodejs
+$ apt remove npm
+
+
+-- PROJETO
+$ npm install express
+$ 
