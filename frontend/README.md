@@ -61,3 +61,6 @@ As principais entidades do sistema são:
 - Comentários
 - Tokens
 
+    ```
+	http://localhost:8800/user
+	```
