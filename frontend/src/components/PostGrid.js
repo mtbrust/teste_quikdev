@@ -26,12 +26,30 @@ export const Th = styled.th`
 
 export const Td = styled.td`
     padding-top: 15px;
-    text-align: ${(props) => (props.alignCenter ? "center;" : "start;")}
-    width: ${(props) => (props.width ? props.width : "auto")}
+    text-align: center;
+    width: auto;
 `
 
 
-const Grid = ({ users }) => {
+const PostGrid = ({ posts, setPosts, setOnEdit }) => {
+
+    const handleEdit = (item) => {
+        setOnEdit(item)
+    }
+
+    const handleDelete = async (id) => {
+        await axios
+            .delete("http://localhost:8800/post/" + id)
+            .then(({ data}) => {
+                const newArray = posts.filter((post) => post.id !== id)
+
+                setPosts(newArray)
+                toast.success(data)
+            })
+            .catch(({data}) => toast.error(data))
+        
+        setOnEdit(null);
+    }
 
     return (
         <Table>
@@ -50,8 +68,8 @@ const Grid = ({ users }) => {
                         <Td width="5%">{item.id}</Td>
                         <Td width="30%">{item.name}</Td>
                         <Td width="30%">{item.email}</Td>
-                        <Td alignCenter width="5%"><FaEdit /></Td>
-                        <Td alignCenter width="5%"><FaTrash /></Td>
+                        <Td width="5%"><FaEdit onClick={() => handleEdit(item)} /></Td>
+                        <Td width="5%"><FaTrash onClick={() => handleDelete(item.id)} /></Td>
                     </Tr>
                 ))}
             </Tbody>
@@ -59,4 +77,4 @@ const Grid = ({ users }) => {
     )
 }
 
-export default Grid
+export default PostGrid

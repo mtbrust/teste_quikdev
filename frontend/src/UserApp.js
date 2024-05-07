@@ -1,7 +1,7 @@
-import GlobalStyle from "./styles/global"
+import GlobalStyle from "./styles/global.js"
 import styled from "styled-components"
-import Form from "./components/Form.js"
-import Grid from "./components/Grid.js"
+import UserForm from "./components/UserForm.js"
+import UserGrid from "./components/UserGrid.js"
 import { useEffect, useState } from "react"
 import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
@@ -19,7 +19,7 @@ const Container = styled.div`
 
 const Title = styled.h2``
 
-function App() {
+function UserApp() {
   const [users, setUsers] = useState([])
   const [onEdit, setOnEdit] = useState(null)
 
@@ -40,8 +40,8 @@ function App() {
     <>
       <Container>
         <Title>Usuários</Title>
-        <Form />
-        <Grid users={users} />
+        <UserForm onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers}/>
+        <UserGrid users={users} setUsers={setUsers} setOnEdit={setOnEdit}/>
       </Container>
       <ToastContainer autoClose={3000}/>
       <GlobalStyle />
@@ -49,4 +49,4 @@ function App() {
   );
 }
 
-export default App;
+export default UserApp;

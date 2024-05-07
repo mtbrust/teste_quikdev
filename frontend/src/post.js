@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import UserApp from './UserApp';
+import PostApp from './PostApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UserApp />
+    <PostApp />
   </React.StrictMode>
 );
