@@ -38,6 +38,8 @@ A inicialização consiste em executar alguns passos.
 	```
 	- Troque as credenciais para as credenciais locais.
 3. Inserir uma carga no banco de dados.
+    - Criação e Carga do banco de dados
+    - (https://github.com/mtbrust/teste_quikdev/blob/main/_documentacao/banco_de_dados.sql)[https://github.com/mtbrust/teste_quikdev/blob/main/_documentacao/banco_de_dados.sql]
 4. Rodar a aplicação backend (api).
 	- Dentro da pasta api, executar o comando:
 	```
