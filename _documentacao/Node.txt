@@ -2,10 +2,13 @@
 -- ENTRAR COMO ROOT.
 $ su -
 
--- instalação do node js (v12.22.12)
+-- instalação do node js (v18.20.2)
 $ apt-get install nodejs
--- instalação do NPM (v 7.5.2)
+$ node -v
+-- instalação do NPM (v 10.5.0)
 $ apt install npm
+$ npm -v
+
 
 
 -- PARA REMOVER O NODE E NPM
