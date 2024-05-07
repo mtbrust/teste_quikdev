@@ -58,3 +58,4 @@ As principais entidades do sistema são:
 - Posts
 - Comentários
 - Tokens
+
