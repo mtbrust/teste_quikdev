@@ -39,9 +39,9 @@ function PostApp() {
   return (
     <>
       <Container>
-        <Title>Usuários</Title>
-        <UserForm onEdit={onEdit} setOnEdit={setOnEdit} getPosts={getPosts}/>
-        <UserGrid posts={posts} setPosts={setPosts} setOnEdit={setOnEdit}/>
+        <Title>Postagens</Title>
+        <PostForm onEdit={onEdit} setOnEdit={setOnEdit} getPosts={getPosts}/>
+        <PostGrid posts={posts} setPosts={setPosts} setOnEdit={setOnEdit}/>
       </Container>
       <ToastContainer autoClose={3000}/>
       <GlobalStyle />

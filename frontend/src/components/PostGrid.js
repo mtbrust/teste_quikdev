@@ -63,7 +63,7 @@ const PostGrid = ({ posts, setPosts, setOnEdit }) => {
                 </Tr>
             </Thead>
             <Tbody>
-                {users.map((item, i) => (
+                {posts.map((item, i) => (
                     <Tr key={i}>
                         <Td width="5%">{item.id}</Td>
                         <Td width="30%">{item.name}</Td>
