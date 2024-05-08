@@ -8,12 +8,14 @@ import {
     inativeComment,
     deleteComment, 
     likeComment,
-    deslikeComment
+    deslikeComment,
+    getCommentsPost
  } from "../controllers/comment.js"
 
 const router = express.Router()
 
 router.get("/", getComments)
+router.get("/post/:id", getCommentsPost)
 router.get("/all/", getAllComments)
 router.post("/", addComment)
 router.put("/:id", updateComment)

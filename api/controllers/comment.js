@@ -10,6 +10,16 @@ export const getComments = (_, res) => {
     })
 }
 
+export const getCommentsPost = (req, res) => {
+    const q = "SELECT * FROM comment WHERE active = 1 AND post_id = ?"
+
+    db.query(q, [req.params.id], (err, data) => {
+        if(err) return res.json(err)
+        
+        return res.status(200).json(data)
+    })
+}
+
 export const getAllComments = (_, res) => {
     const q = "SELECT * FROM comment"
 
