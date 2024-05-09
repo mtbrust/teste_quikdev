@@ -51,3 +51,21 @@ export const deleteUser = (req, res) => {
         return res.status(200).json("Usuário deletado com sucesso.")
     })
 }
+
+export const loginUser = (req, res) => {
+
+    const q = "SELECT * FROM user WHERE email = ? AND password = ?"
+
+    const values = [
+        req.body.email,
+        req.body.password,
+    ]
+
+    db.query(q, [...values], (err, data) => {
+        if(err) return res.json(err)
+        
+        if(!data.length) return res.status(400).json('Login inválido.')
+        
+        return res.status(200).json(data[0])
+    })
+}
