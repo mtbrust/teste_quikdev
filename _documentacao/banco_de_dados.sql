@@ -86,15 +86,17 @@ ENGINE=InnoDB
 DEFAULT CHARSET=utf8
 COLLATE=utf8_general_ci;
 
-CREATE TABLE quikdev.token (
-	id INT auto_increment NOT NULL,
-	title varchar(100) DEFAULT "ND" NOT NULL,
-	value varchar(512) NOT NULL,
-	CONSTRAINT token_pk PRIMARY KEY (id)
-)
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8
-COLLATE=utf8_general_ci;
+-- quikdev.token definition
+
+CREATE TABLE `token` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL DEFAULT 'ND',
+  `value` varchar(512) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `token_user_FK` (`user_id`),
+  CONSTRAINT `token_user_FK` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 CREATE TABLE quikdev.log (
 	id INT auto_increment NOT NULL,

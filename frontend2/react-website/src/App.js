@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Users from "./pages/Users";
 import Posts from "./pages/Posts";
 import Post from "./pages/Post";
- 
+
 function App() {
     return (
         <Router>
