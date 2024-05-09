@@ -46,8 +46,8 @@ const LoginForm = () => {
         e.preventDefault()
 
         const post = ref.current
-        
-        await axios
+
+        const res = await axios
         .get("http://127.0.0.1:8800/authentication/logout")
         .then(({ data }) => {
             toast.success(data)
@@ -69,7 +69,7 @@ const LoginForm = () => {
             toast.success("Login realizado com sucesso.")
         })
         .catch(({ data }) => {
-            toast.error(data)
+            toast.error("Login inválido")
         })
     }
 
