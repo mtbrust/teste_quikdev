@@ -10,6 +10,16 @@ export const getPosts = (_, res) => {
     })
 }
 
+export const getPost = (req, res) => {
+    const q = "SELECT * FROM post WHERE active = 1 AND id = ?"
+
+    db.query(q, [req.params.id], (err, data) => {
+        if(err) return res.json(err)
+        
+        return res.status(200).json(data[0])
+    })
+}
+
 export const getAllPosts = (_, res) => {
     const q = "SELECT * FROM post"
 

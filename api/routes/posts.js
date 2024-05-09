@@ -1,6 +1,7 @@
 import express from "express"
 import { 
     getPosts, 
+    getPost,
     getAllPosts,
     addPost, 
     updatePost, 
@@ -14,6 +15,7 @@ import {
 const router = express.Router()
 
 router.get("/", getPosts)
+router.get("/:id", getPost)
 router.get("/all/", getAllPosts)
 router.post("/", addPost)
 router.put("/:id", updatePost)

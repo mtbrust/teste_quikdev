@@ -16,7 +16,7 @@ app.use(session({secret: 'qweASDzxc', cookie: {maxAge: 60000}}))
 
 app.use("/user", userRoutes)
 app.use("/post", postRoutes)
-app.use("/comment", checkSession, commentsRoutes)
+app.use("/comment", commentsRoutes)
 app.use("/token", checkSession, tokenRoutes)
 app.use("/authentication", authenticationRoutes)
 

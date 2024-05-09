@@ -15,12 +15,12 @@ const Posts = () => {
     const [onEdit, setOnEdit] = useState(null)
 
     const getPosts = async () => {
-    try {
-        const res = await axios.get("http://localhost:8800/post");
-        setPosts(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)))
-    } catch (error) {
-        toast.error(error)
-    }
+        try {
+            const res = await axios.get("http://localhost:8800/post");
+            setPosts(res.data.sort((a, b) => (a.name > b.name ? 1 : -1)))
+        } catch (error) {
+            toast.error(error)
+        }
     }
 
     useEffect(() => {
