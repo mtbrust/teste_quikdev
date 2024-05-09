@@ -39,14 +39,16 @@ A inicialização consiste em executar alguns passos.
 	- Troque as credenciais para as credenciais locais.
 3. Inserir uma carga no banco de dados.
     - Criação e Carga do banco de dados
-    - (https://github.com/mtbrust/teste_quikdev/blob/main/_documentacao/banco_de_dados.sql)[https://github.com/mtbrust/teste_quikdev/blob/main/_documentacao/banco_de_dados.sql]
+    - (_documentacao/banco_de_dados.sql)
 4. Rodar a aplicação backend (api).
 	- Dentro da pasta api, executar o comando:
 	```
+	$ npm install
 	$ npm start
 	```
 	- Dentro da pasta frontend, executar o comando:
 	```
+	$ npm install
 	$ npm start
 	```
 
@@ -61,7 +63,13 @@ As principais entidades do sistema são:
 - Comentários
 - Tokens
 
+A API é acessada pelo endereço:
     ```
-	http://localhost:8800/user
+	http://localhost:8800/
 	```
 
+
+O frontend é acessado pelo endereço:
+    ```
+	http://localhost:3000/
+	```
