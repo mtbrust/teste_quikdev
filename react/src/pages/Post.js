@@ -27,7 +27,7 @@ const Post = () => {
 
     const getComments = async () => {
         try {
-            const res = await axios.get("http://localhost:8800/comment/");
+            const res = await axios.get("http://localhost:8800/comment/post/" + params.id.toString());
             setComments(res.data)
         } catch (error) {
             toast.error(error)
